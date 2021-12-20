@@ -6,14 +6,15 @@ while opcion != '6':
     if opcion == '1':
         nif = input('Introduce el nif del cliente: ')
         nombre = input('Introduce el nombre del cliente: ')
+        apellidos = input('Introduce los apellidos del cliente: ')
         direccion = input('Introduce la direccion del cliente: ')
         telefono = input('Introduce el telefono del cliente: ')
-        email = input('Introduce el correo electronico del cliente: ')
+        correo = input('Introduce el correo electronico del cliente: ')
         preferente = input('¿Es un cliente preferente (S/N)? ')
         if(preferente.lower() == "s"):
-            cliente = {'nombre':nombre, 'direccion':direccion, 'telefono':telefono, 'email':email, 'preferente':'true'}
+            cliente = {'nombre':nombre, 'apellidos':apellidos, 'direccion':direccion, 'telefono':telefono, 'correo':correo, 'preferente':'true'}
         else:
-            cliente = {'nombre':nombre, 'direccion':direccion, 'telefono':telefono, 'email':email, 'preferente':'false'}
+            cliente = {'nombre':nombre, 'apellidos':apellidos, 'direccion':direccion, 'telefono':telefono, 'correo':correo, 'preferente':'false'}
         clientes[nif] = cliente
 
     if opcion == '2':
@@ -51,4 +52,5 @@ while opcion != '6':
     print("(4) Listar Clientes")
     print("(5) Listar clientes preferentes")
     print("(6) Terminar")
+    print("------------------------------------")
     opcion = input('Elige una opción:')
