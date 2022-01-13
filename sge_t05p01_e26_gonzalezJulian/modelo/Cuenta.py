@@ -1,11 +1,11 @@
 class Cuenta:
     controlNumero =  1
-    def __init__(this, dni = None, nombre = None, saldo = None, movimientos = []):
+    def __init__(this, dni = None, nombre = None, saldo = None):
         this.numCuenta = Cuenta.controlNumero
         this.dni = dni
         this.nombre = nombre
         this.saldo = saldo
-        this.movimientos = movimientos
+        this.movimientos = []
         Cuenta.controlNumero += 1
 
     def imprimir_cuenta(this): 
