@@ -48,3 +48,16 @@ class VistaAdministrador:
     
     def mostrarListaSocios(this,info):
         print(info)
+
+    def insertarSocio(this):
+        dni=str(input("Introduzca el dni: "))
+        contrasenna=str(input("Introduzca la contraseña: "))
+        ultimoAcceso=str(input("Introduzca el ultimo acceso: "))
+        es_admin=str(input("Introduzca (True o False) si es admin: "))
+        nombreCompleto=str(input("Introduzca el nombre completo: "))
+        direccion=str(input("Introduzca la direccion: "))
+        telefono=str(input("Introduzca el telefono: "))
+        mail=str(input("Introduzca el mail: "))
+        respuesta = this._controlador.insetarSocio(dni,contrasenna, ultimoAcceso, es_admin,nombreCompleto,direccion,telefono,mail)
+        print("----------------------------------")
+        print(respuesta)
