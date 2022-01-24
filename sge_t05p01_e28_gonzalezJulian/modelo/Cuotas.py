@@ -1,6 +1,5 @@
 from modelo.Socio import Socio
 
-
 class Cuotas:
     def __init__(this, annio = None, socio:Socio = None, pagada = False, cantidadPagar = None, tipoDescuento = None, fecha = None):
         this.annio = annio
