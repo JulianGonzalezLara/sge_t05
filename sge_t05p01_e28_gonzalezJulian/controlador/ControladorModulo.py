@@ -31,7 +31,8 @@ class Controlador:
         except:
             raise Exception("Error inesperado al tratar de leer los datos de los socios.")
 
-    def insertarSocio(self, dni, contrasenna, ultimoAcceso, es_admin, nombreCompleto, direccion, telefono, mail):        
+    def insertarSocio(self, dni, contrasenna, ultimoAcceso, es_admin, nombreCompleto, direccion, telefono, mail):  
+        #cambiar para que se lo pida al modelo      
         try:
             usuario = Usuario(dni,contrasenna, ultimoAcceso, es_admin)
             socio = Socio(usuario,nombreCompleto,direccion, telefono,mail)
