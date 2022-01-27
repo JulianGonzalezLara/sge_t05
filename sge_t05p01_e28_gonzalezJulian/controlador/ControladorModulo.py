@@ -3,7 +3,6 @@ from modelo.Socio import Socio
 
 from typing import List
 class Controlador:
-
     def __init__(self, socio: Socio):
         self._socio=socio
         self._socios :List[Socio] = [self._socio]
