@@ -10,8 +10,8 @@ class Categoria(Enum):
     otros = 'otros'
 
 class Mantenimiento:
-    def __init__(this, fecha = None, coste = None, descripcion = None, categoria:Categoria = None):
-        this.fecha = fecha
-        this.coste = coste
-        this.descripcion = descripcion
-        this.categoria = categoria
+    def __init__(self, fecha = None, coste = None, descripcion = None, categoria:Categoria = None):
+        self.fecha = fecha
+        self.coste = coste
+        self.descripcion = descripcion
+        self.categoria = categoria

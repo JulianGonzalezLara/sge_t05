@@ -6,4 +6,4 @@ class Usuario:
         this._es_admin = es_admin
 
     def getInfo(this):
-        return "\tDni: {}. \n\tContraseña:  {}. \n\tUltimo Acceso:  {}. \n\tEs Admin:  {}.".format(this._dni,this._contrasenna,this._ultimoAcceso,this._es_admin)
+        return "Dni: {}. \n\tContraseña:  {}. \n\tUltimo Acceso:  {}. \n\tEs Admin:  {}.".format(this._dni,this._contrasenna,this._ultimoAcceso,this._es_admin)

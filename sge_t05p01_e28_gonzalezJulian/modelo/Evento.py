@@ -3,12 +3,12 @@ from modelo.Socio import Socio
 
 
 class Evento:
-    def __init__(this, fechaEvento = None, maxFechaInscripcion = None, localidad = None, provincia = None, organizador:Club = None, kmTotales = None, precio = None, listSocios:Socio = []):
-        this.fechaEvento = fechaEvento
-        this.maxFechaInscripcion = maxFechaInscripcion
-        this.localidad = localidad
-        this.provincia = provincia
-        this.organizador =organizador
-        this.kmTotales = kmTotales
-        this.precio = precio
-        this.listSocios = listSocios
+    def __init__(self, fechaEvento = None, maxFechaInscripcion = None, localidad = None, provincia = None, organizador:Club = None, kmTotales = None, precio = None, listSocios:Socio = []):
+        self.fechaEvento = fechaEvento
+        self.maxFechaInscripcion = maxFechaInscripcion
+        self.localidad = localidad
+        self.provincia = provincia
+        self.organizador =organizador
+        self.kmTotales = kmTotales
+        self.precio = precio
+        self.listSocios = listSocios

@@ -4,15 +4,15 @@ from modelo.Usuario import Usuario
 
 
 class Socio:
-    def __init__(this, usuario:Usuario = None, nombreCompleto = None, direccion = None, telefono = None, mail = None):
+    def __init__(self, usuario:Usuario = None, nombreCompleto = None, direccion = None, telefono = None, mail = None):
         #, bicicletas:Bicicleta = [], familia:Familia = None
-        this._usuario = usuario
-        this._nombreCompleto = nombreCompleto
-        this._direccion = direccion
-        this._telefono = telefono
-        this._mail = mail
-        #this.bicicletas = bicicletas
-        #this.familia = familia
+        self._usuario = usuario
+        self._nombreCompleto = nombreCompleto
+        self._direccion = direccion
+        self._telefono = telefono
+        self._mail = mail
+        #self.bicicletas = bicicletas
+        #self.familia = familia
 
-    def getInfo(this):
-        return "\tUsuario: {}. \n\tNombre Completo:  {}. \n\tDireccion:  {}. \n\tTelefono:  {}. \n\tMail:  {}.".format(this._usuario.getInfo(),this._nombreCompleto,this._direccion,this._telefono,this._mail)
+    def getInfo(self):
+        return "\tUsuario: {}. \n\tNombre Completo:  {}. \n\tDireccion:  {}. \n\tTelefono:  {}. \n\tMail:  {}.".format(self._usuario.getInfo(),self._nombreCompleto,self._direccion,self._telefono,self._mail)
