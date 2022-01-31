@@ -1,6 +1,8 @@
 
 from controlador.ControladorModulo import Controlador
+from modelo.Socio import Socio
 
+from typing import List
 class VistaAdministrador:
     def __init__(self, contr: Controlador): 
         self._controlador=contr
@@ -46,18 +48,26 @@ class VistaAdministrador:
     def salir(self):
         print("Cerrando aplicación...")
     
-    def mostrarListaSocios(self,info):
-        print(info)
+    def mostrarListaSocios(self):
+        socios:List[Socio] = self._controlador.mostrarListaSocios()
+        texto = ""
+        for i in socios:
+            texto += "Socio: " + i + "\n"
+            texto += "Dni: {:<10}. Contraseña:  {:<20}. \n".format(i.getUsuario().getDni(), i.getNombreCompleto())
+            print (texto)
 
     def insertarSocio(self):
         dni=str(input("Introduzca el dni: "))
         contrasenna=str(input("Introduzca la contraseña: "))
-        ultimoAcceso=str(input("Introduzca el ultimo acceso: "))
-        es_admin=str(input("Introduzca (True o False) si es admin: "))
+        aux=input("Introduzca (True o False) si es admin: ")
+        if(aux=="True"):
+            es_admin = True
+        elif(aux=="False"):
+            es_admin = False
         nombreCompleto=str(input("Introduzca el nombre completo: "))
         direccion=str(input("Introduzca la direccion: "))
         telefono=str(input("Introduzca el telefono: "))
         mail=str(input("Introduzca el mail: "))
-        respuesta = self._controlador.insertarSocio(dni,contrasenna, ultimoAcceso, es_admin,nombreCompleto,direccion,telefono,mail)
+        respuesta = self._controlador.insertarSocio(dni,contrasenna,es_admin,nombreCompleto,direccion,telefono,mail)
         print("----------------------------------")
         print(respuesta)
