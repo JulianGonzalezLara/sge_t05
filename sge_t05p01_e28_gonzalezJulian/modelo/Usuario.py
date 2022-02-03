@@ -32,4 +32,4 @@ class Usuario:
     
 
     def getInfo(self):
-        return "Dni: {}. \n\tContraseña:  {}. \n\tUltimo Acceso:  {}. \n\tEs Admin:  {}.".format(self._dni,self._contrasenna,self._ultimoAcceso,self._es_admin)
+        return "Dni: {}. \n\tContraseña:  {}. \n\tEs Admin:  {}.".format(self._dni,self._contrasenna,self._es_admin)

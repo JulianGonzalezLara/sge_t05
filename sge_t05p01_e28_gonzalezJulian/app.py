@@ -12,9 +12,3 @@ if __name__ == "__main__":
     socios = [socio,socio2]
     club.setListaSocios(socios)
     controlador_app = Controlador(club)
-
-    sociosAux = list()
-    for i in socios:
-        sociosAux.append(i.prepararDict())
-    GestionJSON.guardarJSON("socios.json", sociosAux)
-    sociosAux=list()
