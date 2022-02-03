@@ -1,0 +1,30 @@
+[
+  {
+    "_usuario": {
+      "_dni": "3",
+      "_contrasenna": "d",
+      "_ultimoAcceso": null,
+      "_es_admin": true
+    },
+    "_nombreCompleto": "Alfonso Garcia",
+    "_direccion": "d",
+    "_telefono": "3",
+    "_mail": "m",
+    "_bicicletas": [],
+    "_familia": null
+  },
+  {
+    "_usuario": {
+      "_dni": "4",
+      "_contrasenna": "d",
+      "_ultimoAcceso": null,
+      "_es_admin": true
+    },
+    "_nombreCompleto": "Pedro Del Olmo",
+    "_direccion": "d",
+    "_telefono": "3",
+    "_mail": "m",
+    "_bicicletas": [],
+    "_familia": null
+  }
+]

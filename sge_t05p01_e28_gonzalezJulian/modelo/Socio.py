@@ -36,7 +36,12 @@ class Socio:
         return self._familia
     
     def setFamilia(self,familia:Familia):
-        self._familia = familia    
+        self._familia = familia 
+
+    def prepararDict(self):
+        dictPrep=self.__dict__.copy()
+        dictPrep["_usuario"]=self._usuario.__dict__
+        return dictPrep   
 
     def getInfo(self):
         return "\tUsuario: {}. \n\tNombre Completo:  {}. \n\tDireccion:  {}. \n\tTelefono:  {}. \n\tMail:  {}.".format(self._usuario.getInfo(),self._nombreCompleto,self._direccion,self._telefono,self._mail)
