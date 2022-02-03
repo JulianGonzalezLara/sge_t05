@@ -30,13 +30,6 @@ class Usuario:
     def setEsAdmin(self, esAdmin):
         self._es_admin = esAdmin
     
-    def insertarUsuario(self, dni, contrasenna,es_admin):        
-        try:
-            usuario = Usuario(dni,contrasenna,es_admin)
-        except Exception as exc:
-            return "Ha ocurrido un error en la insercion del usuario"
-        finally:
-            return usuario
 
     def getInfo(self):
         return "Dni: {}. \n\tContraseña:  {}. \n\tUltimo Acceso:  {}. \n\tEs Admin:  {}.".format(self._dni,self._contrasenna,self._ultimoAcceso,self._es_admin)

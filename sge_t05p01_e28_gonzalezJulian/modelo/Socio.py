@@ -36,15 +36,7 @@ class Socio:
         return self._familia
     
     def setFamilia(self,familia:Familia):
-        self._familia = familia
-    
-    def insertarSocio(self,usuario:Usuario, nombreCompleto, direccion, telefono, mail):        
-        try:
-            socio = Socio(usuario,nombreCompleto,direccion, telefono,mail)
-        except Exception as exc:
-            return "Ha ocurrido un error en la insercion"
-        finally:
-            return socio
+        self._familia = familia    
 
     def getInfo(self):
         return "\tUsuario: {}. \n\tNombre Completo:  {}. \n\tDireccion:  {}. \n\tTelefono:  {}. \n\tMail:  {}.".format(self._usuario.getInfo(),self._nombreCompleto,self._direccion,self._telefono,self._mail)

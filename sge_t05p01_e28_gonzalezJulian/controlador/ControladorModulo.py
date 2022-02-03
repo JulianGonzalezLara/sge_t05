@@ -24,15 +24,12 @@ class Controlador:
     def mostrarListaSocios(self):
         return self._club.getListaSocios()
 
-    def insertarSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
-        try:
-            usuario = Usuario.insertarUsuario(dni,contrasenna,es_admin)
-            socio = Socio.insertarSocio(usuario,nombreCompleto,direccion,telefono,mail)
+    def crearSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
+        try: 
+            usuario = self._club.crearUsuario(dni,contrasenna,es_admin)
+            socio = self._club.crearSocio(usuario,nombreCompleto,direccion,telefono,mail)
             self._club.annadirSocio(socio)
-            print(socio)
         except Exception as exc:
             return "Ha ocurrido un error en la insercion"
-        # finally:
-        #     return "Insercion realizada con exito"
 
 from vista.VistaModeloAdministrador import VistaAdministrador

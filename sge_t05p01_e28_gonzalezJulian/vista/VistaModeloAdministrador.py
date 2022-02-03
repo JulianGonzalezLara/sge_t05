@@ -51,23 +51,26 @@ class VistaAdministrador:
     def mostrarListaSocios(self):
         socios:List[Socio] = self._controlador.mostrarListaSocios()
         texto = ""
+        cont = 1
         for i in socios:
-            texto += "Socio: " + i + "\n"
-            texto += "Dni: {:<10}. Contraseña:  {:<20}. \n".format(i.getUsuario().getDni(), i.getNombreCompleto())
-            print (texto)
+            texto += "Socio: " + str(cont) + "\n"
+            texto += "Dni: {:<10} Contraseña:  {:<20} \n".format(i.getUsuario().getDni(), i.getNombreCompleto())
+            cont = cont+1
+        
+        print (texto)
 
     def insertarSocio(self):
         dni=str(input("Introduzca el dni: "))
         contrasenna=str(input("Introduzca la contraseña: "))
         aux=input("Introduzca (True o False) si es admin: ")
-        if(aux=="True"):
+        if(aux.casefold()=="true"):
             es_admin = True
-        elif(aux=="False"):
+        elif(aux.casefold()=="false"):
             es_admin = False
         nombreCompleto=str(input("Introduzca el nombre completo: "))
         direccion=str(input("Introduzca la direccion: "))
         telefono=str(input("Introduzca el telefono: "))
         mail=str(input("Introduzca el mail: "))
-        respuesta = self._controlador.insertarSocio(dni,contrasenna,es_admin,nombreCompleto,direccion,telefono,mail)
+        respuesta = self._controlador.crearSocio(dni,contrasenna,es_admin,nombreCompleto,direccion,telefono,mail)
         print("----------------------------------")
         print(respuesta)
