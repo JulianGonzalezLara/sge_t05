@@ -11,7 +11,8 @@ if __name__ == "__main__":
     club = Club("Los Satanases del Infierno","L - 76298710","C/ Seis de Junio")
     socio = Socio(Usuario("78980815F","d",True),"Alfonso Garcia","d","3","m")
     socio2 = Socio(Usuario("71389546P","d",True),"Pedro Del Olmo","d","3","m")
-    socios = [socio,socio2]
+    socio3 = Socio(Usuario("76389556P","d",True),"Antonio Perez","d","3","m")
+    socios = [socio,socio2,socio3]
     club.setListaSocios(socios)
     if len(sys.argv) == 6:
         if sys.argv[5] == "-A":

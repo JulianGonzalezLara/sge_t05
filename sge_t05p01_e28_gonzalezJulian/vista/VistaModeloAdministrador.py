@@ -50,11 +50,12 @@ class VistaAdministrador:
     
     def mostrarListaSocios(self):
         socios:List[Socio] = self._controlador.mostrarListaSocios()
+        socios.sort(key = lambda x: x.getNombreCompleto())
         texto = ""
         cont = 1
         for i in socios:
             texto += "Socio: " + str(cont) + "\n"
-            texto += "Dni: {:<10} Contraseña:  {:<20} \n".format(i.getUsuario().getDni(), i.getNombreCompleto())
+            texto += "Dni: {:<10} Nombre:  {:<20} \n".format(i.getUsuario().getDni(), i.getNombreCompleto())
             cont = cont+1
         
         print (texto)
