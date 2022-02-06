@@ -37,3 +37,11 @@ class Club:
             return socio
         except Exception as exc:
             return "Ha ocurrido un error en la creacion del socio"
+    
+    def prepararDict(self):
+        dictPrep=self.__dict__.copy()
+        sociosAux = list()
+        for i in self.getListaSocios():
+            sociosAux.append(i.prepararDict())
+        dictPrep["_listaSocios"]=sociosAux
+        return dictPrep

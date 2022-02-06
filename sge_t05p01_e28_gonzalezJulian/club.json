@@ -1,0 +1,49 @@
+{
+  "_nombreClub": "Los Satanases del Infierno",
+  "_cif": "L - 76298710",
+  "_sede": "C/ Seis de Junio",
+  "_listaSocios": [
+    {
+      "_usuario": {
+        "_dni": "78980815F",
+        "_contrasenna": "d",
+        "_ultimoAcceso": null,
+        "_es_admin": true
+      },
+      "_nombreCompleto": "Alfonso Garcia",
+      "_direccion": "d",
+      "_telefono": "3",
+      "_mail": "m",
+      "_bicicletas": [],
+      "_familia": null
+    },
+    {
+      "_usuario": {
+        "_dni": "76389556P",
+        "_contrasenna": "d",
+        "_ultimoAcceso": null,
+        "_es_admin": true
+      },
+      "_nombreCompleto": "Antonio Perez",
+      "_direccion": "d",
+      "_telefono": "3",
+      "_mail": "m",
+      "_bicicletas": [],
+      "_familia": null
+    },
+    {
+      "_usuario": {
+        "_dni": "71389546P",
+        "_contrasenna": "d",
+        "_ultimoAcceso": null,
+        "_es_admin": true
+      },
+      "_nombreCompleto": "Pedro Del Olmo",
+      "_direccion": "d",
+      "_telefono": "3",
+      "_mail": "m",
+      "_bicicletas": [],
+      "_familia": null
+    }
+  ]
+}

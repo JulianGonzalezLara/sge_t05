@@ -12,6 +12,7 @@ class ControladorAdmin:
 
     def controlOpciones(self,opc):
         if (opc == 0): 
+            self.crearJson()
             self._vistaAdmin.salir()
         elif (opc == 1):
             self._vistaAdmin.mostrarListaSocios()
@@ -40,6 +41,10 @@ class ControladorAdmin:
             return "Ha ocurrido un error en la insercion"
     
     def crearJson(self):
+        clubAux = self._club.prepararDict()
+        GestionJSON.guardarJSON("club.json", clubAux)
+    
+    def crearJsonSocio(self):
         sociosAux = list()
         for i in self._club.getListaSocios():
             sociosAux.append(i.prepararDict())
