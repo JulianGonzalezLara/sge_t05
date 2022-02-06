@@ -1,8 +1,10 @@
+import sys
 from modelo import GestionJSON
 from modelo.Club import Club
 from modelo.Socio import Socio
 from modelo.Usuario import Usuario
-from controlador.ControladorModulo import Controlador
+from controlador.ControladorModulo import ControladorAdmin
+from controlador.ControladorModuloSocios import ControladorSocios
 
 
 if __name__ == "__main__":
@@ -11,4 +13,10 @@ if __name__ == "__main__":
     socio2 = Socio(Usuario("71389546P","d",True),"Pedro Del Olmo","d","3","m")
     socios = [socio,socio2]
     club.setListaSocios(socios)
-    controlador_app = Controlador(club)
+    if len(sys.argv) == 6:
+        if sys.argv[5] == "-A":
+            controlador_Admin = ControladorAdmin(club)
+    elif len(sys.argv) == 5:
+        controlador_Socio = ControladorSocios(club)
+    else:
+        print ("El numero de parametros introducido es incorrecto")

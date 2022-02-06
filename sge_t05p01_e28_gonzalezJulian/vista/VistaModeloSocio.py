@@ -1,8 +1,8 @@
 
-from controlador.ControladorModulo import Controlador
+from controlador.ControladorModuloSocios import ControladorSocios
 
 class VistaSocio:
-    def __init__(this, contr: Controlador): 
+    def __init__(this, contr: ControladorSocios): 
         this._controlador=contr
 
     def inicio(this):

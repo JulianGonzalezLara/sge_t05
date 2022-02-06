@@ -1,10 +1,10 @@
 
-from controlador.ControladorModulo import Controlador
+from controlador.ControladorModulo import ControladorAdmin
 from modelo.Socio import Socio
 
 from typing import List
 class VistaAdministrador:
-    def __init__(self, contr: Controlador): 
+    def __init__(self, contr: ControladorAdmin): 
         self._controlador=contr
 
     def inicio(self):

@@ -4,27 +4,25 @@ from modelo.Usuario import Usuario
 from modelo.Socio import Socio
 
 from typing import List
-class ControladorAdmin:
+
+class ControladorSocios:
     def __init__(self, club: Club):
         self._club = club
-        self._vistaAdmin=VistaAdministrador(self)
-        self._vistaAdmin.inicio()
+        self._vistaSocio=VistaSocio(self)
+        self._vistaSocio.inicio()
 
     def controlOpciones(self,opc):
         if (opc == 0): 
-            self._vistaAdmin.salir()
+            self._vistaSocio.salir()
         elif (opc == 1):
-            self._vistaAdmin.mostrarListaSocios()
-            self._vistaAdmin.inicio()
+            self._vistaSocio.mostrarListaSocios()
+            self._vistaSocio.inicio()
         elif (opc == 2):
-            self._vistaAdmin.insertarSocio()
-            self._vistaAdmin.inicio()
+            pass
         elif (opc == 3):
-            self.crearJson()
-            self._vistaAdmin.inicio()
+            pass
         elif (opc == 4):
-            self.leerJSON()
-            self._vistaAdmin.inicio()
+            pass
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
 
@@ -54,4 +52,4 @@ class ControladorAdmin:
         
         return listaSocios
 
-from vista.VistaModeloAdministrador import VistaAdministrador
+from vista.VistaModeloSocio import VistaSocio
