@@ -14,12 +14,29 @@ if __name__ == "__main__":
     # socios = [socio,socio2,socio3]
     #socios=GestionJSON.leerJSONSocios("socios.json") 
     # club.setListaSocios(socios)
-    club=GestionJSON.leerJSONClub("club.json") 
+    club=GestionJSON.leerJSONClub("club.json")
+
     if len(sys.argv) == 6:
         if sys.argv[5] == "-A":
-            controlador_Admin = ControladorAdmin(club)
+            for c in club.getListaSocios():
+                if c.getUsuario().getDni() == sys.argv[2]:
+                    if c.getUsuario().getContrasenna() == sys.argv[4]:
+                        if c.getUsuario().getEsAdmin() == True:
+                            controlador_Admin = ControladorAdmin(club)
+                        else:
+                            print("El usuario no es admin")
+                            exit()
+                    else:
+                        print("La contraseña no es valida")
+                        exit()
+                else:
+                    print("El usuario no existe")
+                    exit()
     elif len(sys.argv) == 5:
-        controlador_Socio = ControladorSocios(club)
+        for c in club.getListaSocios():
+            if c.getUsuario().getDni() == sys.argv[2]:
+                if c.getUsuario().getContrasenna() == sys.argv[4]:
+                    controlador_Socio = ControladorSocios(club)
     else:
         print ("El numero de parametros introducido es incorrecto")
 
