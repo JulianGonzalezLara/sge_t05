@@ -22,7 +22,7 @@ if __name__ == "__main__":
                 if c.getUsuario().getDni() == sys.argv[2]:
                     if c.getUsuario().getContrasenna() == sys.argv[4]:
                         if c.getUsuario().getEsAdmin() == True:
-                            controlador_Admin = ControladorAdmin(club)
+                            controlador_Admin = ControladorAdmin(club, c)
                         else:
                             print("El usuario no es admin")
                             exit()

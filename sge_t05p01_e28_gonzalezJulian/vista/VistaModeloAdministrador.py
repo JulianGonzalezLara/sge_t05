@@ -17,6 +17,16 @@ class VistaAdministrador:
         finally:
             self.salir
 
+    def mostrarMenuZona(self):
+        print("*****************************************")
+        print("*           LOS SATANASES DEL           *")
+        print("*             INFIERNO APP              *")
+        print("*****************************************")
+        print("*         Zona de administración        *")
+        print("*           Usuario: {}     *".format(self._controlador.getUsuarioConectado().getNombreCompleto()))
+        print("*     Último acc.: {}     *".format(self._controlador.getUsuarioConectado().getUsuario().getUltimoAcceso()))
+        print("*****************************************")
+
     def mostrarMenu(self):
         print("-------------------------------Menú---------------------------------")
         print("1. Ver listado completo de socios.")

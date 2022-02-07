@@ -21,6 +21,7 @@ def leerJSONClub(rutaFich):
     club=Club(cadjson["_nombreClub"], cadjson["_cif"], cadjson["_sede"])
     for j in cadjson["_listaSocios"]:
         socio=Socio(Usuario(j["_usuario"]["_dni"],j["_usuario"]["_contrasenna"],j["_usuario"]["_es_admin"]), j["_nombreCompleto"], j["_direccion"], j["_telefono"], j["_mail"])
+        socio.getUsuario().setUltimoAcceso(j["_usuario"]["_ultimoAcceso"])
         listaAux.append(socio)
     club.setListaSocios(listaAux)
     return club

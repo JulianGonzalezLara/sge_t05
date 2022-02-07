@@ -1,3 +1,4 @@
+from datetime import datetime
 from modelo import GestionJSON
 from modelo.Club import Club
 from modelo.Usuario import Usuario
@@ -5,13 +6,17 @@ from modelo.Socio import Socio
 
 from typing import List
 class ControladorAdmin:
-    def __init__(self, club: Club):
+    def __init__(self, club: Club, usuario: Socio):
         self._club = club
+        self._usuarioConectado = usuario
         self._vistaAdmin=VistaAdministrador(self)
+        self._vistaAdmin.mostrarMenuZona()
         self._vistaAdmin.inicio()
 
     def controlOpciones(self,opc):
         if (opc == 0): 
+            now = datetime.now()
+            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)))
             self.crearJson()
             self._vistaAdmin.salir()
         elif (opc == 1):
@@ -39,6 +44,9 @@ class ControladorAdmin:
             self._club.annadirSocio(socio)
         except Exception as exc:
             return "Ha ocurrido un error en la insercion"
+    
+    def getUsuarioConectado(self):
+        return self._usuarioConectado
     
     def crearJson(self):
         clubAux = self._club.prepararDict()
