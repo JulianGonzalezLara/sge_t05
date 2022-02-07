@@ -37,6 +37,11 @@ class Club:
         except Exception as exc:
             return "Ha ocurrido un error en la creacion del socio"
     
+    def comprobarDni(self, dni):
+        for i in self.getListaSocios():
+            if i.getUsuario().getDni() == dni:
+                return None
+    
     def prepararDict(self):
         dictPrep=self.__dict__.copy()
         sociosAux = list()

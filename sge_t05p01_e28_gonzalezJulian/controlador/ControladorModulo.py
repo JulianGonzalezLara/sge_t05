@@ -36,6 +36,10 @@ class ControladorAdmin:
 
     def mostrarListaSocios(self):
         return self._club.getListaSocios()
+    
+    def comprobarDni(self,dni):
+        respuesta = self._club.comprobarDni(dni)
+        return respuesta
 
     def crearSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
         try: 
@@ -51,20 +55,5 @@ class ControladorAdmin:
     def crearJson(self):
         clubAux = self._club.prepararDict()
         GestionJSON.guardarJSON("club.json", clubAux)
-    
-    def crearJsonSocio(self):
-        sociosAux = list()
-        for i in self._club.getListaSocios():
-            sociosAux.append(i.prepararDict())
-        GestionJSON.guardarJSON("socios.json", sociosAux)
-        sociosAux=list()
-    
-    def leerJSON(self):
-        listaSocios=list()
-        listaSociosJson=GestionJSON.leerJSON("socios.json") 
-        for i in listaSociosJson:
-            listaSocios.append(Socio(Usuario(i["_usuario"]["_dni"],i["_usuario"]["_contrasenna"],i["_usuario"]["_es_admin"]), i["_nombreCompleto"], i["_direccion"], i["_telefono"], i["_mail"]))
-        
-        return listaSocios
 
 from vista.VistaModeloAdministrador import VistaAdministrador
