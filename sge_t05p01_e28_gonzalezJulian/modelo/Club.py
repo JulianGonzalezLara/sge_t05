@@ -3,7 +3,6 @@ from modelo.Socio import Socio
 from modelo.Usuario import Usuario
 class Club:
     def __init__(self, nombreClub = None, cif = None, sede = None):
-    #, listaSocios = [], listaEventos = [], saldoTotal = None,cuotas:Cuotas = []
         self._nombreClub = nombreClub
         self._cif = cif
         self._sede = sede
