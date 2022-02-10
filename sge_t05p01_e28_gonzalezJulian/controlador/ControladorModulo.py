@@ -26,10 +26,9 @@ class ControladorAdmin:
             self._vistaAdmin.insertarSocio()
             self._vistaAdmin.inicio()
         elif (opc == 3):
-            self.crearJson()
+            self._vistaAdmin.addFamilia()
             self._vistaAdmin.inicio()
         elif (opc == 4):
-            self.leerJSON()
             self._vistaAdmin.inicio()
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
@@ -55,5 +54,12 @@ class ControladorAdmin:
     def crearJson(self):
         clubAux = self._club.prepararDict()
         GestionJSON.guardarJSON("club.json", clubAux)
+    
+    def addFamilia(self,dniTitular,dniFamilia,tipoFamilia):
+        socioTitular:Socio = self._club.socioPorDni(dniTitular)
+        socioFamilia:Socio = self._club.socioPorDni(dniFamilia)
+        respuesta = socioTitular.crearFamilia(socioFamilia,tipoFamilia)
+        return respuesta
+
 
 from vista.VistaModeloAdministrador import VistaAdministrador

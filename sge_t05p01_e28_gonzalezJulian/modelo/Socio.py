@@ -12,7 +12,7 @@ class Socio:
         self._telefono = telefono
         self._mail = mail
         self._bicicletas:List[Bicicleta] = []
-        self._familia:Familia = None
+        self._familia:Familia = Familia()
 
     def getUsuario(self):
         return self._usuario
@@ -36,11 +36,21 @@ class Socio:
         return self._familia
     
     def setFamilia(self,familia:Familia):
-        self._familia = familia 
+        self._familia = familia
+    
+    def crearFamilia(self,familiar,tipoFamilia):
+        try:
+            if(tipoFamilia == 1):
+                self._familia.setPareja(familiar)
+            else:
+                self._familia.addHijo(familiar)
+        except Exception as exc:
+            return "Ha ocurrido un error al añadir familiar"
 
     def prepararDict(self):
         dictPrep=self.__dict__.copy()
         dictPrep["_usuario"]=self._usuario.__dict__
+        dictPrep["_familia"]=self._familia.prepararDict()
         return dictPrep
 
     def getInfo(self):

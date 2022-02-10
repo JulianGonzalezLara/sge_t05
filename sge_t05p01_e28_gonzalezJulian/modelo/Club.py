@@ -40,7 +40,14 @@ class Club:
     def comprobarDni(self, dni):
         for i in self.getListaSocios():
             if i.getUsuario().getDni() == dni:
-                return None
+                return "Existe"
+            else:
+                return "No existe"
+    
+    def socioPorDni(self, dni):
+        for i in self.getListaSocios():
+            if i.getUsuario().getDni() == dni:
+                return i
     
     def prepararDict(self):
         dictPrep=self.__dict__.copy()

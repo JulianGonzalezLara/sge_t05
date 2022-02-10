@@ -72,7 +72,7 @@ class VistaAdministrador:
 
     def insertarSocio(self):
         dni=str(input("Introduzca el dni: "))
-        if self._controlador.comprobarDni(dni) != None:
+        if self._controlador.comprobarDni(dni) == ("No existe"):
             contrasenna=str(input("Introduzca la contraseña: "))
             aux=input("Introduzca (True o False) si es admin: ")
             if(aux.casefold()=="true"):
@@ -88,3 +88,39 @@ class VistaAdministrador:
             print(respuesta)
         else:
             print("El DNI ya existe")
+    
+    def addFamilia(self):
+        sigue=True
+        while(sigue==True):
+            dniTitular=str(input("Introduzca el dni del socio a añadir familia: "))
+            if self._controlador.comprobarDni(dniTitular) == ("Existe"):
+                print("Introduzca el tipo de familiar que va a añadir")
+                print("1. Pareja.")
+                print("2. Hijo.")
+                opc=int(input("Deme una opción: "))
+                while(opc<1 and opc>2):
+                    print("Opcion no valida")
+                    print("1. Pareja.")
+                    print("2. Hijo.")
+                    opc=int(input("Deme una opción: "))
+                dniFamilia=str(input("Introduzca el dni del familiar: "))
+                if self._controlador.comprobarDni(dniFamilia) == ("Existe"):
+                    respuesta = self._controlador.addFamilia(dniTitular,dniFamilia,opc)
+                    print(respuesta)
+                    print("\n-------------------------------------------")
+                    print("¿Desea añadir mas familiares?")
+                    print("1. Si.")
+                    print("2. No.")
+                    opc2=int(input("Deme una opción: "))
+                    while(opc<1 and opc>2):
+                        print("Opcion no valida")
+                        print("1. Si.")
+                        print("2. No.")
+                        opc2=int(input("Deme una opción: "))
+                    if(opc2 == 2):
+                        sigue=False
+                else:
+                    print ("El dni del familiar no existe")
+            else:
+                print("El dni del titular no existe")
+        

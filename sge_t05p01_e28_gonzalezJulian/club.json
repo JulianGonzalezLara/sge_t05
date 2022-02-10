@@ -7,7 +7,7 @@
       "_usuario": {
         "_dni": "78980815F",
         "_contrasenna": "d",
-        "_ultimoAcceso": "2022-2-7 11:15:27",
+        "_ultimoAcceso": "2022-2-10 13:50:32",
         "_es_admin": true
       },
       "_nombreCompleto": "Alfonso Garcia",
@@ -15,7 +15,12 @@
       "_telefono": "3",
       "_mail": "m",
       "_bicicletas": [],
-      "_familia": null
+      "_familia": {
+        "_dni": "78980815F",
+        "_contrasenna": "d",
+        "_ultimoAcceso": "2022-2-10 13:50:32",
+        "_es_admin": true
+      }
     },
     {
       "_usuario": {
@@ -29,7 +34,12 @@
       "_telefono": "3",
       "_mail": "m",
       "_bicicletas": [],
-      "_familia": null
+      "_familia": {
+        "_dni": "76389556P",
+        "_contrasenna": "d",
+        "_ultimoAcceso": null,
+        "_es_admin": true
+      }
     },
     {
       "_usuario": {
@@ -43,7 +53,31 @@
       "_telefono": "1",
       "_mail": "a",
       "_bicicletas": [],
-      "_familia": null
+      "_familia": {
+        "_dni": "71890675G",
+        "_contrasenna": "123",
+        "_ultimoAcceso": null,
+        "_es_admin": false
+      }
+    },
+    {
+      "_usuario": {
+        "_dni": "18765478J",
+        "_contrasenna": "a",
+        "_ultimoAcceso": null,
+        "_es_admin": false
+      },
+      "_nombreCompleto": "Julieta Garcia",
+      "_direccion": "d",
+      "_telefono": "4",
+      "_mail": "f",
+      "_bicicletas": [],
+      "_familia": {
+        "_dni": "18765478J",
+        "_contrasenna": "a",
+        "_ultimoAcceso": null,
+        "_es_admin": false
+      }
     },
     {
       "_usuario": {
@@ -57,7 +91,12 @@
       "_telefono": "3",
       "_mail": "m",
       "_bicicletas": [],
-      "_familia": null
+      "_familia": {
+        "_dni": "71389546P",
+        "_contrasenna": "d",
+        "_ultimoAcceso": null,
+        "_es_admin": true
+      }
     }
   ]
 }
