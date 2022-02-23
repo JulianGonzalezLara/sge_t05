@@ -50,7 +50,7 @@ class Socio:
     def prepararDict(self):
         dictPrep=self.__dict__.copy()
         dictPrep["_usuario"]=self._usuario.__dict__
-        dictPrep["_familia"]=self._familia.prepararDict()
+        dictPrep["_familia"]=self._familia.prepararDictFamilia()
         return dictPrep
 
     def getInfo(self):

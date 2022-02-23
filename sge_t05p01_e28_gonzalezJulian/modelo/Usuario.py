@@ -30,6 +30,8 @@ class Usuario:
     def setEsAdmin(self, esAdmin):
         self._es_admin = esAdmin
     
+    def prepararDictUsuario(self):
+        return self.__dict__.copy()    
 
     def getInfo(self):
         return "Dni: {}. \n\tContraseña:  {}. \n\tEs Admin:  {}.".format(self._dni,self._contrasenna,self._es_admin)

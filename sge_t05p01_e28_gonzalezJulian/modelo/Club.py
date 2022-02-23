@@ -42,7 +42,8 @@ class Club:
             if i.getUsuario().getDni() == dni:
                 return "Existe"
             else:
-                return "No existe"
+                opc = "No existe"
+        return opc
     
     def socioPorDni(self, dni):
         for i in self.getListaSocios():

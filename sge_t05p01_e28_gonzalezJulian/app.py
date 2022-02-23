@@ -15,6 +15,7 @@ if __name__ == "__main__":
     #socios=GestionJSON.leerJSONSocios("socios.json") 
     # club.setListaSocios(socios)
     club=GestionJSON.leerJSONClub("club.json")
+    # controlador_Admin = ControladorAdmin(club, club.getListaSocios()[0])
 
     if len(sys.argv) == 6:
         if sys.argv[5] == "-A":
