@@ -21,14 +21,18 @@ class ControladorAdmin:
             self._vistaAdmin.salir()
         elif (opc == 1):
             self._vistaAdmin.mostrarListaSocios()
+            input("Press Enter to continue...")
             self._vistaAdmin.inicio()
         elif (opc == 2):
-            self._vistaAdmin.insertarSocio()
+            self._vistaAdmin.insertarSocio()            
+            input("Press Enter to continue...")
             self._vistaAdmin.inicio()
         elif (opc == 3):
             self._vistaAdmin.addFamilia()
+            input("Press Enter to continue...")
             self._vistaAdmin.inicio()
         elif (opc == 4):
+            input("Press Enter to continue...")
             self._vistaAdmin.inicio()
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
