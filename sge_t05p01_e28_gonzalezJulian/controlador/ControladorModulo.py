@@ -72,6 +72,9 @@ class ControladorAdmin:
     def comprobarDni(self,dni):
         respuesta = self._club.comprobarDni(dni)
         return respuesta
+    
+    def comprobarSiEsHijo(self,dni):
+        return self._club.comprobarSiEsHijo(dni)
 
     def crearSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
         try: 
