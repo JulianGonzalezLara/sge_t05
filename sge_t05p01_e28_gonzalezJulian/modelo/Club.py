@@ -89,12 +89,30 @@ class Club:
         for i in self.getListaSocios():
             for j in i.getFamilia().getHijos():
                 if j.getUsuario().getDni() == dni:
-                    return j
+                    return i
     
     def getCuotaDni(self, dni):
         for i in self.getListaCuotas():
             if i.getSocio().getUsuario().getDni() == dni:
                 return i
+    
+    def comprobarCuotaAnnio(self, dni, annio):
+        for i in self.getListaCuotas():
+            if i.getSocio().getUsuario().getDni() == dni:
+                if i.getAnnio() == annio:
+                    return i
+    
+    def cuotasAnnio(self):
+        currentDateTime = datetime.datetime.now()
+        date = currentDateTime.date()
+        year = date.strftime("%Y")
+        for i in self.getListaSocios():
+            comp = self.comprobarCuotaAnnio(i.getUsuario().getDni(),year)
+            if comp == None:
+                calculoCuotas = self.calculoCuotas(i)
+                tipoDescuento = self.tipoDescuento(i)
+                cuotaS = Cuota(year,i,False,calculoCuotas,tipoDescuento,None)
+                self.annadirCuota(cuotaS)
     
     def calculoCuotas(self, socio:Socio):
         currentDateTime = datetime.datetime.now()
@@ -102,7 +120,7 @@ class Club:
         month = int(date.strftime("%m"))
         year = date.strftime("%Y")
         cantidadPagar = 0
-        comprobarSiEsHijo = self.comprobarSiEsHijo(socio)
+        comprobarSiEsHijo = self.comprobarSiEsHijo(socio.getUsuario().getDni())
         if comprobarSiEsHijo == None:
             if month>0 and month < 6:
                 cantidadPagar = self.PAGOENERO
@@ -110,13 +128,13 @@ class Club:
                 cantidadPagar = self.PAGOJULIO
             if socio.getFamilia().getPareja() != None and len(socio.getFamilia().getHijos()) == 0:
                 descuento = cantidadPagar * (self.DESCUENTOPAREJA / 100)
-                cantidadPagar - descuento
+                cantidadPagar = cantidadPagar - descuento
             if socio.getFamilia().getPareja() == None and len(socio.getFamilia().getHijos()) > 0:
                 descuento = cantidadPagar * (self.DESCUENTOHIJOS / 100)
-                cantidadPagar - descuento
+                cantidadPagar = cantidadPagar - descuento
             if socio.getFamilia().getPareja() != None and len(socio.getFamilia().getHijos()) > 0:
                 descuento = cantidadPagar * (self.DESCUENTOPAREJAHIJOS / 100)
-                cantidadPagar - descuento
+                cantidadPagar = cantidadPagar - descuento
         else:
             cuotaPadre = self.getCuotaDni(comprobarSiEsHijo.getUsuario().getDni())
             cantidadPagar = cuotaPadre.getCantidadPagar()
@@ -129,7 +147,7 @@ class Club:
         year = date.strftime("%Y")
         cantidadPagar = 0
         tipoDescuento = ""
-        comprobarSiEsHijo = self.comprobarSiEsHijo(socio)
+        comprobarSiEsHijo = self.comprobarSiEsHijo(socio.getUsuario().getDni())
         if comprobarSiEsHijo == None:
             if month>0 and month < 6:
                 cantidadPagar = self.PAGOENERO

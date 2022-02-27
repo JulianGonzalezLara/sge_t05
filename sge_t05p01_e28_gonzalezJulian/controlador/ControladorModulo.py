@@ -34,6 +34,9 @@ class ControladorAdmin:
         elif (opc == 4):
             input("Press Enter to continue...")
             self._vistaAdmin.inicio()
+        elif (opc == 8):
+            self._club.cuotasAnnio()
+            self._vistaAdmin.inicio()
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
 
