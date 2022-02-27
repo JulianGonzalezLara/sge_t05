@@ -5,6 +5,23 @@
   "_listaSocios": [
     {
       "_usuario": {
+        "_dni": "11111111A",
+        "_contrasenna": "admin",
+        "_ultimoAcceso": "2022-2-27 16:55:49",
+        "_es_admin": true
+      },
+      "_nombreCompleto": "Admin",
+      "_direccion": null,
+      "_telefono": null,
+      "_mail": null,
+      "_bicicletas": [],
+      "_familia": {
+        "_pareja": null,
+        "_hijos": []
+      }
+    },
+    {
+      "_usuario": {
         "_dni": "78980815F",
         "_contrasenna": "d",
         "_ultimoAcceso": "2022-2-27 11:51:31",
@@ -111,6 +128,50 @@
         "_pareja": null,
         "_hijos": []
       }
+    },
+    {
+      "_usuario": {
+        "_dni": "1",
+        "_contrasenna": "a",
+        "_ultimoAcceso": null,
+        "_es_admin": false
+      },
+      "_nombreCompleto": "a",
+      "_direccion": "a",
+      "_telefono": "a",
+      "_mail": "a",
+      "_bicicletas": [],
+      "_familia": {
+        "_pareja": null,
+        "_hijos": []
+      }
+    }
+  ],
+  "_saldoTotal": 0,
+  "_cuotas": [
+    {
+      "_annio": "2022",
+      "_socio": {
+        "_usuario": {
+          "_dni": "1",
+          "_contrasenna": "a",
+          "_ultimoAcceso": null,
+          "_es_admin": false
+        },
+        "_nombreCompleto": "a",
+        "_direccion": "a",
+        "_telefono": "a",
+        "_mail": "a",
+        "_bicicletas": [],
+        "_familia": {
+          "_pareja": null,
+          "_hijos": []
+        }
+      },
+      "_pagada": false,
+      "_cantidadPagar": 15,
+      "_tipoDescuento": "No se le aplica ningun descuento",
+      "_fecha": null
     }
   ]
 }
