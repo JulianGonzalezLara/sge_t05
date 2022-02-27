@@ -30,6 +30,13 @@ class Club:
     def getListaCuotas(self):
         return self._cuotas
     
+    def getListaCuotasSocio(self,socio:Socio):
+        auxCuotas:List[Cuota] = []
+        for i in self.getListaCuotas():
+            if i.getSocio().getUsuario().getDni() == socio.getUsuario().getDni():
+                auxCuotas.append(i)
+        return auxCuotas
+    
     def getListaCuotasAnio(self,anio):
         auxCuotas:List[Cuota] = []
         for i in self.getListaCuotas():

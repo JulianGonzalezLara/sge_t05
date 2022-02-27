@@ -1,3 +1,4 @@
+import datetime
 from modelo import GestionJSON
 from modelo.Club import Club
 from modelo.Usuario import Usuario
@@ -6,28 +7,37 @@ from modelo.Socio import Socio
 from typing import List
 
 class ControladorSocios:
-    def __init__(self, club: Club):
+    def __init__(self, club: Club, usuario: Socio):
         self._club = club
+        self._usuarioConectado = usuario
         self._vistaSocio=VistaSocio(self)
+        self._vistaSocio.mostrarMenuZona()
         self._vistaSocio.inicio()
 
     def controlOpciones(self,opc):
         if (opc == 0): 
+            now = datetime.datetime.now()
+            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)))
+            self.crearJson()
             self._vistaSocio.salir()
         elif (opc == 1):
-            self._vistaSocio.mostrarListaSocios()
+            # self._vistaSocio.mostrarListaSocios()
             self._vistaSocio.inicio()
         elif (opc == 2):
-            pass
-        elif (opc == 3):
-            pass
-        elif (opc == 4):
-            pass
+            self._vistaSocio.inicio()
+        elif (opc == 7):
+            self._vistaSocio.mostrarFamilia()
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
+        elif (opc == 8):
+            self._vistaSocio.mostrarCuotas()
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
 
-    def mostrarListaSocios(self):
-        return self._club.getListaSocios()
+    def mostrarFamilia(self):
+        return self._club.socioPorDni(self.getUsuarioConectado().getUsuario().getDni())
 
     def crearSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
         try: 
@@ -37,19 +47,17 @@ class ControladorSocios:
         except Exception as exc:
             return "Ha ocurrido un error en la insercion"
     
-    def crearJson(self):
-        sociosAux = list()
-        for i in self._club.getListaSocios():
-            sociosAux.append(i.prepararDict())
-        GestionJSON.guardarJSON("socios.json", sociosAux)
-        sociosAux=list()
+    def getUsuarioConectado(self):
+        return self._usuarioConectado
+
+    def socioPorDni(self,dni):
+        return self._club.socioPorDni(dni)
     
-    def leerJSON(self):
-        listaSocios=list()
-        listaSociosJson=GestionJSON.leerJSON("socios.json") 
-        for i in listaSociosJson:
-            listaSocios.append(Socio(Usuario(i["_usuario"]["_dni"],i["_usuario"]["_contrasenna"],i["_usuario"]["_es_admin"]), i["_nombreCompleto"], i["_direccion"], i["_telefono"], i["_mail"]))
-        
-        return listaSocios
+    def mostrarCuotas(self):
+        return self._club.getListaCuotasSocio(self.getUsuarioConectado())
+    
+    def crearJson(self):
+        clubAux = self._club.prepararDict()
+        GestionJSON.guardarJSON("club.json", clubAux)
 
 from vista.VistaModeloSocio import VistaSocio
