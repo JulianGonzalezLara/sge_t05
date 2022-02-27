@@ -63,6 +63,14 @@ class ControladorAdmin:
         socioTitular:Socio = self._club.socioPorDni(dniTitular)
         socioFamilia:Socio = self._club.socioPorDni(dniFamilia)
         respuesta = socioTitular.crearFamilia(socioFamilia,tipoFamilia)
+
+        if tipoFamilia == 1:
+            socioFamilia.crearFamilia(socioTitular,tipoFamilia)
+        else:
+            if socioTitular.getFamilia().getPareja() != None:
+                socioPareja:Socio = self._club.socioPorDni(socioTitular.getFamilia().getPareja().getUsuario().getDni())
+                socioPareja.crearFamilia(socioFamilia,tipoFamilia)
+
         return respuesta
 
 
