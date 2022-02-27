@@ -1,6 +1,7 @@
-from datetime import datetime
+import datetime
 from modelo import GestionJSON
 from modelo.Club import Club
+from modelo.Cuota import Cuota
 from modelo.Usuario import Usuario
 from modelo.Socio import Socio
 
@@ -15,7 +16,7 @@ class ControladorAdmin:
 
     def controlOpciones(self,opc):
         if (opc == 0): 
-            now = datetime.now()
+            now = datetime.datetime.now()
             self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)))
             self.crearJson()
             self._vistaAdmin.salir()
@@ -34,14 +35,39 @@ class ControladorAdmin:
         elif (opc == 4):
             input("Press Enter to continue...")
             self._vistaAdmin.inicio()
+        elif (opc == 7):
+            self._vistaAdmin.mostrarListaCuotas()
+            input("Press Enter to continue...")
+            self._vistaAdmin.inicio()
         elif (opc == 8):
             self._club.cuotasAnnio()
+            self._vistaAdmin.inicio()
+        elif (opc == 9):
+            self._vistaAdmin.realizarPago()
+            input("Press Enter to continue...")
             self._vistaAdmin.inicio()
         else:
             pass #Confiamos en la validación del cliente porque es una app de escritorio.
 
     def mostrarListaSocios(self):
         return self._club.getListaSocios()
+    
+    def mostrarListaCuotas(self, anio):
+        return self._club.getListaCuotasAnio(anio)
+    
+    def realizarPago(self,dni):
+        currentDateTime = datetime.datetime.now()
+        date = currentDateTime.date()
+        year = date.strftime("%Y")
+        anioCuotas = self._club.comprobarCuotaAnnio(dni,year)
+        if anioCuotas == None:
+            self._club.cuotasAnnio()
+        
+        cuota:Cuota = self._club.getCuotaDni(dni)
+        cuota.setPagada(True)
+        cuota.setFecha(("{}-{}-{} {}:{}:{}".format(currentDateTime.year, currentDateTime.month, currentDateTime.day, currentDateTime.hour, currentDateTime.minute, currentDateTime.second)))
+        respuesta = cuota
+        return respuesta
     
     def comprobarDni(self,dni):
         respuesta = self._club.comprobarDni(dni)

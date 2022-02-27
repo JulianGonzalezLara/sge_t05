@@ -1,5 +1,6 @@
 
 from controlador.ControladorModulo import ControladorAdmin
+from modelo.Cuota import Cuota
 from modelo.Socio import Socio
 
 from typing import List
@@ -23,8 +24,8 @@ class VistaAdministrador:
         print("*             INFIERNO APP              *")
         print("*****************************************")
         print("*         Zona de administración        *")
-        print("*           Usuario: {}     *".format(self._controlador.getUsuarioConectado().getNombreCompleto()))
-        print("*     Último acc.: {}     *".format(self._controlador.getUsuarioConectado().getUsuario().getUltimoAcceso()))
+        print("*           Usuario: {:<19}*".format(self._controlador.getUsuarioConectado().getNombreCompleto()))
+        print("*     Último acc.: {:<21}*".format(self._controlador.getUsuarioConectado().getUsuario().getUltimoAcceso()))
         print("*****************************************")
 
     def mostrarMenu(self):
@@ -57,6 +58,7 @@ class VistaAdministrador:
 
     def salir(self):
         print("Cerrando aplicación...")
+        exit()
     
     def mostrarListaSocios(self):
         socios:List[Socio] = self._controlador.mostrarListaSocios()
@@ -69,6 +71,48 @@ class VistaAdministrador:
             cont = cont+1
         
         print (texto)
+    
+    def mostrarListaCuotas(self):
+        anio=str(input("Introduzca el año a consultar: "))
+        if anio.isnumeric():
+            cuotas:List[Cuota] = self._controlador.mostrarListaCuotas(anio)
+            cuotas.sort(key = lambda x: x.getPagada())
+            texto = "Control cuotas año {}\n".format(anio)
+            pagado = ""
+            fecha = ""
+            for i in cuotas:
+                if i.getPagada():
+                    pagado = "Pagado"
+                else:
+                    pagado = "No Pagado"
+                
+                if i.getFecha() == None:
+                    fecha = ""
+                else:
+                    fecha = i.getFecha()
+                texto += "Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<10} Tipo descuento:  {:<20} \n".format(i.getSocio().getUsuario().getDni(), pagado, i.getCantidadPagar(), fecha, i.getTipoDescuento())
+        
+            print (texto)
+        else:
+            print("Numero no valido")
+    
+    def realizarPago(self):
+        dni=str(input("Introduzca el dni: "))
+        if self._controlador.comprobarDni(dni) == ("Existe"):
+            respuesta = self._controlador.realizarPago(dni)
+            print("----------------------------------")
+            if respuesta.getPagada():
+                pagado = "Pagado"
+            else:
+                pagado = "No Pagado"
+                
+            if respuesta.getFecha() == None:
+                fecha = ""
+            else:
+                fecha = respuesta.getFecha()
+            print("Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<10} Tipo descuento:  {:<20} \n".format(respuesta.getSocio().getUsuario().getDni(), pagado, respuesta.getCantidadPagar(), fecha, respuesta.getTipoDescuento()))
+        else:
+            print("El DNI no existe")
 
     def insertarSocio(self):
         dni=str(input("Introduzca el dni: "))

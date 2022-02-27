@@ -35,9 +35,6 @@ if __name__ == "__main__":
                         else:
                             print("El parametro 3 es incorrecto")
                             exit()
-                    else:
-                        print("El usuario no existe")
-                        exit()
                 else:
                     print("El parametro 2 es incorrecto")
                     exit()
@@ -58,4 +55,7 @@ if __name__ == "__main__":
                     exit()
     else:
         print ("El numero de parametros introducido es incorrecto")
+
+
+    print("El usuario no existe")
 

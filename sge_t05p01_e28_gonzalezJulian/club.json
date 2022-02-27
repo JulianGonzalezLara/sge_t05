@@ -7,7 +7,7 @@
       "_usuario": {
         "_dni": "11111111A",
         "_contrasenna": "admin",
-        "_ultimoAcceso": "2022-2-27 18:54:43",
+        "_ultimoAcceso": "2022-2-27 21:39:34",
         "_es_admin": true
       },
       "_nombreCompleto": "Admin",
@@ -168,10 +168,10 @@
           "_hijos": []
         }
       },
-      "_pagada": false,
+      "_pagada": true,
       "_cantidadPagar": 15,
       "_tipoDescuento": "No se le aplica ningun descuento",
-      "_fecha": null
+      "_fecha": "2022-2-27 21:39:31"
     },
     {
       "_annio": "2022",
@@ -188,20 +188,8 @@
         "_mail": "m",
         "_bicicletas": [],
         "_familia": {
-          "_pareja": {
-            "_dni": "18765478J",
-            "_contrasenna": "a",
-            "_ultimoAcceso": null,
-            "_es_admin": false
-          },
-          "_hijos": [
-            {
-              "_dni": "76389556P",
-              "_contrasenna": "d",
-              "_ultimoAcceso": null,
-              "_es_admin": true
-            }
-          ]
+          "_pareja": null,
+          "_hijos": []
         }
       },
       "_pagada": false,
@@ -272,20 +260,8 @@
         "_mail": "f",
         "_bicicletas": [],
         "_familia": {
-          "_pareja": {
-            "_dni": "78980815F",
-            "_contrasenna": "d",
-            "_ultimoAcceso": null,
-            "_es_admin": true
-          },
-          "_hijos": [
-            {
-              "_dni": "76389556P",
-              "_contrasenna": "d",
-              "_ultimoAcceso": null,
-              "_es_admin": true
-            }
-          ]
+          "_pareja": null,
+          "_hijos": []
         }
       },
       "_pagada": false,

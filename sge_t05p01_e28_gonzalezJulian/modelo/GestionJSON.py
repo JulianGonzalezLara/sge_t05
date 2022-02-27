@@ -39,5 +39,6 @@ def leerJSONClub(rutaFich):
         socio.getUsuario().setUltimoAcceso(i["_socio"]["_usuario"]["_ultimoAcceso"])
         cuota.setSocio(socio)
         listaAuxCuotas.append(cuota)
+    club.setListaCuotas(listaAuxCuotas)
 
     return club
