@@ -113,7 +113,7 @@ class Club:
     def comprobarCuotaAnnio(self, dni, annio):
         for i in self.getListaCuotas():
             if i.getSocio().getUsuario().getDni() == dni:
-                if i.getAnnio() == annio:
+                if int(i.getAnnio()) == int(annio):
                     return i
     
     def cuotasAnnio(self):
@@ -127,6 +127,9 @@ class Club:
                 tipoDescuento = self.tipoDescuento(i)
                 cuotaS = Cuota(year,i,False,calculoCuotas,tipoDescuento,None)
                 self.annadirCuota(cuotaS)
+            else:
+                comp.setCantidadPagar(self.calculoCuotas(i))
+                comp.setTipoDescuento(self.tipoDescuento(i))
     
     def calculoCuotas(self, socio:Socio):
         currentDateTime = datetime.datetime.now()

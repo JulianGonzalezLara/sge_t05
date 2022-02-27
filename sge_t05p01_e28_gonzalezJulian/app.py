@@ -16,43 +16,43 @@ if __name__ == "__main__":
     #socios=GestionJSON.leerJSONSocios("socios.json") 
     # club.setListaSocios(socios)
     club=GestionJSON.leerJSONClub("club.json")
-    # controlador_Admin = ControladorAdmin(club, club.getListaSocios()[0])
+    controlador_Admin = ControladorAdmin(club, club.getListaSocios()[0])
 
-    if len(sys.argv) == 6:
-        if sys.argv[5] == "-A":
-            for c in club.getListaSocios():
-                if sys.argv[1] == "-u":
-                    if c.getUsuario().getDni() == sys.argv[2]:
-                        if sys.argv[3] == "-p":
-                            if c.getUsuario().getContrasenna() == sys.argv[4]:
-                                if c.getUsuario().getEsAdmin() == True:
-                                    controlador_Admin = ControladorAdmin(club, c)
-                                else:
-                                    print("El usuario no es admin")
-                                    exit()
-                            else:
-                                print("La contraseña no es valida")
-                                exit()
-                        else:
-                            print("El parametro 3 es incorrecto")
-                            exit()
-                else:
-                    print("El parametro 2 es incorrecto")
-                    exit()
-    elif len(sys.argv) == 5:
-        for c in club.getListaSocios():
-                if sys.argv[1] == "-u":
-                    if c.getUsuario().getDni() == sys.argv[2]:
-                        if sys.argv[3] == "-p":
-                            controladorSocio = ControladorSocios(club, c)
-                        else:
-                            print("El parametro 3 es incorrecto")
-                            exit()
-                else:
-                    print("El parametro 2 es incorrecto")
-                    exit()
-    else:
-        print ("El numero de parametros introducido es incorrecto")
+    # if len(sys.argv) == 6:
+    #     if sys.argv[5] == "-A":
+    #         for c in club.getListaSocios():
+    #             if sys.argv[1] == "-u":
+    #                 if c.getUsuario().getDni() == sys.argv[2]:
+    #                     if sys.argv[3] == "-p":
+    #                         if c.getUsuario().getContrasenna() == sys.argv[4]:
+    #                             if c.getUsuario().getEsAdmin() == True:
+    #                                 controlador_Admin = ControladorAdmin(club, c)
+    #                             else:
+    #                                 print("El usuario no es admin")
+    #                                 exit()
+    #                         else:
+    #                             print("La contraseña no es valida")
+    #                             exit()
+    #                     else:
+    #                         print("El parametro 3 es incorrecto")
+    #                         exit()
+    #             else:
+    #                 print("El parametro 2 es incorrecto")
+    #                 exit()
+    # elif len(sys.argv) == 5:
+    #     for c in club.getListaSocios():
+    #             if sys.argv[1] == "-u":
+    #                 if c.getUsuario().getDni() == sys.argv[2]:
+    #                     if sys.argv[3] == "-p":
+    #                         controladorSocio = ControladorSocios(club, c)
+    #                     else:
+    #                         print("El parametro 3 es incorrecto")
+    #                         exit()
+    #             else:
+    #                 print("El parametro 2 es incorrecto")
+    #                 exit()
+    # else:
+    #     print ("El numero de parametros introducido es incorrecto")
 
 
     print("El usuario no existe")

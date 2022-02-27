@@ -90,7 +90,7 @@ class VistaAdministrador:
                     fecha = ""
                 else:
                     fecha = i.getFecha()
-                texto += "Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<10} Tipo descuento:  {:<20} \n".format(i.getSocio().getUsuario().getDni(), pagado, i.getCantidadPagar(), fecha, i.getTipoDescuento())
+                texto += "Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<20} Tipo descuento:  {:<20} \n".format(i.getSocio().getUsuario().getDni(), pagado, i.getCantidadPagar(), fecha, i.getTipoDescuento())
         
             print (texto)
         else:
