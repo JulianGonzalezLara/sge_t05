@@ -21,9 +21,22 @@ class ControladorSocios:
             self.crearJson()
             self._vistaSocio.salir()
         elif (opc == 1):
-            # self._vistaSocio.mostrarListaSocios()
+            input("Press Enter to continue...")
             self._vistaSocio.inicio()
         elif (opc == 2):
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
+        elif (opc == 3):
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
+        elif (opc == 4):
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
+        elif (opc == 5):
+            input("Press Enter to continue...")
+            self._vistaSocio.inicio()
+        elif (opc == 6):
+            input("Press Enter to continue...")
             self._vistaSocio.inicio()
         elif (opc == 7):
             self._vistaSocio.mostrarFamilia()

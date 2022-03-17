@@ -35,6 +35,12 @@ class ControladorAdmin:
         elif (opc == 4):
             input("Press Enter to continue...")
             self._vistaAdmin.inicio()
+        elif (opc == 5):
+            input("Press Enter to continue...")
+            self._vistaAdmin.inicio()
+        elif (opc == 6):
+            input("Press Enter to continue...")
+            self._vistaAdmin.inicio()
         elif (opc == 7):
             self._vistaAdmin.mostrarListaCuotas()
             input("Press Enter to continue...")
@@ -75,6 +81,9 @@ class ControladorAdmin:
     
     def comprobarSiEsHijo(self,dni):
         return self._club.comprobarSiEsHijo(dni)
+    
+    def comprobarSiEsPareja(self,dni):
+        return self._club.comprobarSiEsPareja(dni)
 
     def crearSocio(self, dni, contrasenna, es_admin, nombreCompleto, direccion, telefono, mail):  
         try: 
@@ -98,6 +107,11 @@ class ControladorAdmin:
 
         if tipoFamilia == 1:
             socioFamilia.crearFamilia(socioTitular,tipoFamilia)
+            if len(socioFamilia.getFamilia().getHijos()) != 0:
+                for i in socioFamilia.getFamilia().getHijos():
+                    socioTitular.getFamilia().addHijo(i)
+            
+            socioFamilia.getFamilia().setHijos(socioTitular.getFamilia().getHijos())
         else:
             if socioTitular.getFamilia().getPareja() != None:
                 socioPareja:Socio = self._club.socioPorDni(socioTitular.getFamilia().getPareja().getUsuario().getDni())

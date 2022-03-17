@@ -4,10 +4,11 @@ from modelo.Usuario import Usuario
 import datetime
 
 from typing import List
-class Club:
-    #Constantes descuentos
+class Club:    
+    #Constantes Pagos
     PAGOENERO = 15
     PAGOJULIO = 8
+    #Constantes descuentos
     DESCUENTOPAREJA = 10
     DESCUENTOHIJOS = 15 
     DESCUENTOPAREJAHIJOS = 30
@@ -105,6 +106,12 @@ class Club:
                 if j.getUsuario().getDni() == dni:
                     return i
     
+    def comprobarSiEsPareja(self, dni):
+        for i in self.getListaSocios():
+            if i.getFamilia().getPareja() != None:
+                if i.getFamilia().getPareja().getUsuario().getDni() == dni:
+                    return i
+    
     def getCuotaDni(self, dni):
         for i in self.getListaCuotas():
             if i.getSocio().getUsuario().getDni() == dni:
@@ -182,7 +189,15 @@ class Club:
             tipoDescuento = "Se le aplica descuento por ser hijo"
         return tipoDescuento
     
+    def sumarSaldoTotal(self):
+        suma = 0
+        for i in self.getListaCuotas():
+            if i.getPagada() == True:
+                suma += i.getCantidadPagar()
+        self.setSaldoTotal(suma)
+    
     def prepararDict(self):
+        self.sumarSaldoTotal()
         dictPrep=self.__dict__.copy()
         sociosAux = list()
         for i in self.getListaSocios():
