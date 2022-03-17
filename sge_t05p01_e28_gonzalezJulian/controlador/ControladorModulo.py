@@ -116,6 +116,8 @@ class ControladorAdmin:
             if socioTitular.getFamilia().getPareja() != None:
                 socioPareja:Socio = self._club.socioPorDni(socioTitular.getFamilia().getPareja().getUsuario().getDni())
                 socioPareja.crearFamilia(socioFamilia,tipoFamilia)
+        
+        self._club.cuotasAnnio()
 
         return respuesta
 

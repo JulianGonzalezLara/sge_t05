@@ -39,18 +39,24 @@ if __name__ == "__main__":
                 else:
                     print("El parametro 2 es incorrecto")
                     exit()
+        else:
+            print ("Parametro -A mal introducido")
     elif len(sys.argv) == 5:
         for c in club.getListaSocios():
-                if sys.argv[1] == "-u":
-                    if c.getUsuario().getDni() == sys.argv[2]:
-                        if sys.argv[3] == "-p":
+            if sys.argv[1] == "-u":
+                if c.getUsuario().getDni() == sys.argv[2]:
+                    if sys.argv[3] == "-p":
+                        if c.getUsuario().getContrasenna() == sys.argv[4]:
                             controladorSocio = ControladorSocios(club, c)
                         else:
-                            print("El parametro 3 es incorrecto")
-                            exit()
-                else:
-                    print("El parametro 2 es incorrecto")
-                    exit()
+                            print("La contraseña no es valida")
+                            exit()                            
+                    else:
+                        print("El parametro 3 es incorrecto")
+                        exit()
+            else:
+                print("El parametro 2 es incorrecto")
+                exit()
     else:
         print ("El numero de parametros introducido es incorrecto")
 

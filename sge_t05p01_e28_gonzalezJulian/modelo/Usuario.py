@@ -3,7 +3,7 @@ class Usuario:
     def __init__(self, dni = None, contrasenna = None, es_admin = None):
         self._dni = dni
         self._contrasenna = contrasenna
-        self._ultimoAcceso = None
+        self._ultimoAcceso = ''
         self._es_admin = es_admin
     
     def getDni(self):
