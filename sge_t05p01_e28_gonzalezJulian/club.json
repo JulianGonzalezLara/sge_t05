@@ -7,7 +7,7 @@
       "_usuario": {
         "_dni": "11111111A",
         "_contrasenna": "admin",
-        "_ultimoAcceso": "20-3-2022 15:44:3",
+        "_ultimoAcceso": "21-3-2022 0:18:42",
         "_es_admin": true
       },
       "_nombreCompleto": "Admin",
@@ -22,85 +22,15 @@
     },
     {
       "_usuario": {
-        "_dni": "a",
-        "_contrasenna": "a",
-        "_ultimoAcceso": "20-3-2022 15:21:47",
+        "_dni": "86578567H",
+        "_contrasenna": "123",
+        "_ultimoAcceso": "21-3-2022 0:17:33",
         "_es_admin": true
       },
-      "_nombreCompleto": "a",
+      "_nombreCompleto": "Jose Juan",
       "_direccion": "a",
       "_telefono": "a",
       "_mail": "a",
-      "_bicicletas": [],
-      "_familia": {
-        "_pareja": {
-          "_dni": "b",
-          "_contrasenna": "b",
-          "_ultimoAcceso": "",
-          "_es_admin": false
-        },
-        "_hijos": [
-          {
-            "_dni": "c",
-            "_contrasenna": "c",
-            "_ultimoAcceso": "",
-            "_es_admin": false
-          },
-          {
-            "_dni": "d",
-            "_contrasenna": "d",
-            "_ultimoAcceso": "",
-            "_es_admin": false
-          }
-        ]
-      }
-    },
-    {
-      "_usuario": {
-        "_dni": "b",
-        "_contrasenna": "b",
-        "_ultimoAcceso": "",
-        "_es_admin": false
-      },
-      "_nombreCompleto": "b",
-      "_direccion": "b",
-      "_telefono": "b",
-      "_mail": "b",
-      "_bicicletas": [],
-      "_familia": {
-        "_pareja": {
-          "_dni": "a",
-          "_contrasenna": "a",
-          "_ultimoAcceso": "",
-          "_es_admin": true
-        },
-        "_hijos": [
-          {
-            "_dni": "c",
-            "_contrasenna": "c",
-            "_ultimoAcceso": "",
-            "_es_admin": false
-          },
-          {
-            "_dni": "d",
-            "_contrasenna": "d",
-            "_ultimoAcceso": "",
-            "_es_admin": false
-          }
-        ]
-      }
-    },
-    {
-      "_usuario": {
-        "_dni": "c",
-        "_contrasenna": "c",
-        "_ultimoAcceso": "",
-        "_es_admin": false
-      },
-      "_nombreCompleto": "c",
-      "_direccion": "c",
-      "_telefono": "c",
-      "_mail": "c",
       "_bicicletas": [],
       "_familia": {
         "_pareja": null,
@@ -109,15 +39,49 @@
     },
     {
       "_usuario": {
-        "_dni": "d",
-        "_contrasenna": "d",
-        "_ultimoAcceso": "",
+        "_dni": "71209785L",
+        "_contrasenna": "123",
+        "_ultimoAcceso": "20-3-2022 23:8:33",
         "_es_admin": false
       },
-      "_nombreCompleto": "d",
-      "_direccion": "d",
-      "_telefono": "d",
-      "_mail": "d",
+      "_nombreCompleto": "Josefina",
+      "_direccion": "a",
+      "_telefono": "a",
+      "_mail": "a",
+      "_bicicletas": [],
+      "_familia": {
+        "_pareja": null,
+        "_hijos": []
+      }
+    },
+    {
+      "_usuario": {
+        "_dni": "84509128G",
+        "_contrasenna": "123",
+        "_ultimoAcceso": "20-3-2022 23:19:18",
+        "_es_admin": false
+      },
+      "_nombreCompleto": "Juan Alberto",
+      "_direccion": "a",
+      "_telefono": "a",
+      "_mail": "a",
+      "_bicicletas": [],
+      "_familia": {
+        "_pareja": null,
+        "_hijos": []
+      }
+    },
+    {
+      "_usuario": {
+        "_dni": "71276450D",
+        "_contrasenna": "123",
+        "_ultimoAcceso": "21-3-2022 0:17:58",
+        "_es_admin": false
+      },
+      "_nombreCompleto": "Pedro",
+      "_direccion": "a",
+      "_telefono": "a",
+      "_mail": "a",
       "_bicicletas": [],
       "_familia": {
         "_pareja": null,
@@ -125,111 +89,15 @@
       }
     }
   ],
-  "_saldoTotal": 10.5,
+  "_saldoTotal": 0,
   "_cuotas": [
-    {
-      "_annio": "2021",
-      "_socio": {
-        "_usuario": {
-          "_dni": "a",
-          "_contrasenna": "a",
-          "_ultimoAcceso": "",
-          "_es_admin": true
-        },
-        "_nombreCompleto": "a",
-        "_direccion": "a",
-        "_telefono": "a",
-        "_mail": "a",
-        "_bicicletas": [],
-        "_familia": {
-          "_pareja": null,
-          "_hijos": []
-        }
-      },
-      "_pagada": false,
-      "_cantidadPagar": 15,
-      "_tipoDescuento": "No se le aplica ningun descuento",
-      "_fecha": ""
-    },
-    {
-      "_annio": "2021",
-      "_socio": {
-        "_usuario": {
-          "_dni": "b",
-          "_contrasenna": "b",
-          "_ultimoAcceso": "",
-          "_es_admin": false
-        },
-        "_nombreCompleto": "b",
-        "_direccion": "b",
-        "_telefono": "b",
-        "_mail": "b",
-        "_bicicletas": [],
-        "_familia": {
-          "_pareja": null,
-          "_hijos": []
-        }
-      },
-      "_pagada": false,
-      "_cantidadPagar": 15,
-      "_tipoDescuento": "No se le aplica ningun descuento",
-      "_fecha": null
-    },
-    {
-      "_annio": "2021",
-      "_socio": {
-        "_usuario": {
-          "_dni": "c",
-          "_contrasenna": "c",
-          "_ultimoAcceso": "",
-          "_es_admin": false
-        },
-        "_nombreCompleto": "c",
-        "_direccion": "c",
-        "_telefono": "c",
-        "_mail": "c",
-        "_bicicletas": [],
-        "_familia": {
-          "_pareja": null,
-          "_hijos": []
-        }
-      },
-      "_pagada": false,
-      "_cantidadPagar": 15,
-      "_tipoDescuento": "No se le aplica ningun descuento",
-      "_fecha": null
-    },
-    {
-      "_annio": "2021",
-      "_socio": {
-        "_usuario": {
-          "_dni": "d",
-          "_contrasenna": "d",
-          "_ultimoAcceso": "",
-          "_es_admin": false
-        },
-        "_nombreCompleto": "d",
-        "_direccion": "d",
-        "_telefono": "d",
-        "_mail": "d",
-        "_bicicletas": [],
-        "_familia": {
-          "_pareja": null,
-          "_hijos": []
-        }
-      },
-      "_pagada": false,
-      "_cantidadPagar": 15,
-      "_tipoDescuento": "No se le aplica ningun descuento",
-      "_fecha": null
-    },
     {
       "_annio": "2022",
       "_socio": {
         "_usuario": {
           "_dni": "11111111A",
           "_contrasenna": "admin",
-          "_ultimoAcceso": "20-3-2022 13:50:25",
+          "_ultimoAcceso": "21-3-2022 0:16:56",
           "_es_admin": true
         },
         "_nombreCompleto": "Admin",
@@ -251,12 +119,12 @@
       "_annio": "2022",
       "_socio": {
         "_usuario": {
-          "_dni": "a",
-          "_contrasenna": "a",
-          "_ultimoAcceso": "",
+          "_dni": "86578567H",
+          "_contrasenna": "123",
+          "_ultimoAcceso": "21-3-2022 0:12:14",
           "_es_admin": true
         },
-        "_nombreCompleto": "a",
+        "_nombreCompleto": "Jose Juan",
         "_direccion": "a",
         "_telefono": "a",
         "_mail": "a",
@@ -266,48 +134,24 @@
           "_hijos": []
         }
       },
-      "_pagada": true,
-      "_cantidadPagar": 10.5,
-      "_tipoDescuento": "Se le aplica descuento por pareja e hijos",
-      "_fecha": "20-3-2022 13:55:40"
-    },
-    {
-      "_annio": "2022",
-      "_socio": {
-        "_usuario": {
-          "_dni": "b",
-          "_contrasenna": "b",
-          "_ultimoAcceso": "",
-          "_es_admin": false
-        },
-        "_nombreCompleto": "b",
-        "_direccion": "b",
-        "_telefono": "b",
-        "_mail": "b",
-        "_bicicletas": [],
-        "_familia": {
-          "_pareja": null,
-          "_hijos": []
-        }
-      },
       "_pagada": false,
-      "_cantidadPagar": 10.5,
-      "_tipoDescuento": "Se le aplica descuento por pareja e hijos",
+      "_cantidadPagar": 15,
+      "_tipoDescuento": "No se le aplica ningun descuento",
       "_fecha": null
     },
     {
       "_annio": "2022",
       "_socio": {
         "_usuario": {
-          "_dni": "c",
-          "_contrasenna": "c",
-          "_ultimoAcceso": "",
+          "_dni": "71209785L",
+          "_contrasenna": "123",
+          "_ultimoAcceso": "20-3-2022 23:8:33",
           "_es_admin": false
         },
-        "_nombreCompleto": "c",
-        "_direccion": "c",
-        "_telefono": "c",
-        "_mail": "c",
+        "_nombreCompleto": "Josefina",
+        "_direccion": "a",
+        "_telefono": "a",
+        "_mail": "a",
         "_bicicletas": [],
         "_familia": {
           "_pareja": null,
@@ -315,23 +159,23 @@
         }
       },
       "_pagada": false,
-      "_cantidadPagar": 10.5,
-      "_tipoDescuento": "Se le aplica descuento por ser hijo",
+      "_cantidadPagar": 15,
+      "_tipoDescuento": "No se le aplica ningun descuento",
       "_fecha": null
     },
     {
       "_annio": "2022",
       "_socio": {
         "_usuario": {
-          "_dni": "d",
-          "_contrasenna": "d",
-          "_ultimoAcceso": "",
+          "_dni": "84509128G",
+          "_contrasenna": "123",
+          "_ultimoAcceso": "20-3-2022 23:19:18",
           "_es_admin": false
         },
-        "_nombreCompleto": "d",
-        "_direccion": "d",
-        "_telefono": "d",
-        "_mail": "d",
+        "_nombreCompleto": "Juan Alberto",
+        "_direccion": "a",
+        "_telefono": "a",
+        "_mail": "a",
         "_bicicletas": [],
         "_familia": {
           "_pareja": null,
@@ -339,8 +183,32 @@
         }
       },
       "_pagada": false,
-      "_cantidadPagar": 10.5,
-      "_tipoDescuento": "Se le aplica descuento por ser hijo",
+      "_cantidadPagar": 15,
+      "_tipoDescuento": "No se le aplica ningun descuento",
+      "_fecha": null
+    },
+    {
+      "_annio": "2022",
+      "_socio": {
+        "_usuario": {
+          "_dni": "71276450D",
+          "_contrasenna": "123",
+          "_ultimoAcceso": "20-3-2022 23:22:23",
+          "_es_admin": false
+        },
+        "_nombreCompleto": "Pedro",
+        "_direccion": "a",
+        "_telefono": "a",
+        "_mail": "a",
+        "_bicicletas": [],
+        "_familia": {
+          "_pareja": null,
+          "_hijos": []
+        }
+      },
+      "_pagada": false,
+      "_cantidadPagar": 15,
+      "_tipoDescuento": "No se le aplica ningun descuento",
       "_fecha": null
     }
   ]

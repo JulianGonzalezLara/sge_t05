@@ -80,19 +80,22 @@ class VistaAdministrador:
             texto = "Control cuotas año {}\n".format(anio)
             pagado = ""
             fecha = ""
-            for i in cuotas:
-                if i.getPagada():
-                    pagado = "Pagado"
-                else:
-                    pagado = "No Pagado"
-                
-                if i.getFecha() == None:
-                    fecha = ""
-                else:
-                    fecha = i.getFecha()
-                texto += "Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<20} Tipo descuento:  {:<20} \n".format(i.getSocio().getUsuario().getDni(), pagado, i.getCantidadPagar(), fecha, i.getTipoDescuento())
-        
-            print (texto)
+            if len(cuotas) > 0:
+                for i in cuotas:
+                    if i.getPagada():
+                        pagado = "Pagado"
+                    else:
+                        pagado = "No Pagado"
+                    
+                    if i.getFecha() == None:
+                        fecha = ""
+                    else:
+                        fecha = i.getFecha()
+                    texto += "Dni: {:<10} Pagada:  {:<10} Cantidad:  {:<10} Fecha:  {:<20} Tipo descuento:  {:<20} \n".format(i.getSocio().getUsuario().getDni(), pagado, i.getCantidadPagar(), fecha, i.getTipoDescuento())
+            else:
+                texto += "No hay cuotas disponibles para este año"
+
+            print ("\n" + texto)
         else:
             print("Numero no valido")
     
@@ -131,6 +134,8 @@ class VistaAdministrador:
             print("----------------------------------")
             if respuesta != None:
                 print(respuesta)
+            else:
+                print ("Socio creado correctamente")
         else:
             print("El DNI ya existe")
     
