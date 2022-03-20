@@ -17,7 +17,7 @@ class ControladorAdmin:
     def controlOpciones(self,opc):
         if (opc == 0): 
             now = datetime.datetime.now()
-            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)))
+            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.day, now.month, now.year, now.hour, now.minute, now.second)))
             self.crearJson()
             self._vistaAdmin.salir()
         elif (opc == 1):
@@ -69,9 +69,9 @@ class ControladorAdmin:
         if anioCuotas == None:
             self._club.cuotasAnnio()
         
-        cuota:Cuota = self._club.getCuotaDni(dni)
+        cuota:Cuota = self._club.getCuotaDni(dni,year)
         cuota.setPagada(True)
-        cuota.setFecha(("{}-{}-{} {}:{}:{}".format(currentDateTime.year, currentDateTime.month, currentDateTime.day, currentDateTime.hour, currentDateTime.minute, currentDateTime.second)))
+        cuota.setFecha(("{}-{}-{} {}:{}:{}".format(currentDateTime.day, currentDateTime.month, currentDateTime.year, currentDateTime.hour, currentDateTime.minute, currentDateTime.second)))
         respuesta = cuota
         return respuesta
     

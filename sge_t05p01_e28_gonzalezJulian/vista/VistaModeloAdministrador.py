@@ -155,28 +155,37 @@ class VistaAdministrador:
                         break                        
 
                     dniFamilia=str(input("Introduzca el dni del familiar: "))
-                    if self._controlador.comprobarDni(dniFamilia) == ("Existe"):                        
-                        if(self._controlador.comprobarSiEsHijo(dniFamilia) == None):
-                            respuesta = self._controlador.addFamilia(dniTitular,dniFamilia,opc)
-                            if respuesta != None:
-                                print(respuesta)
-                            else:
-                                print ("Familiar añadido correctamente")
-                            
-                            print("\n-------------------------------------------")
-                            print("¿Desea añadir mas familiares?")
-                            print("1. Si.")
-                            print("2. No.")
-                            opc2=int(input("Deme una opción: "))
-                            while(opc<1 and opc>2):
-                                print("Opcion no valida")
+                    if self._controlador.comprobarDni(dniFamilia) == ("Existe"):
+                        if dniTitular != dniFamilia:  
+                            if(self._controlador.comprobarSiEsPareja(dniFamilia) != None):
+                                print ("El socio ya tiene pareja")
+                                break                
+                            if(self._controlador.comprobarSiEsHijo(dniFamilia) == None):
+                                respuesta = self._controlador.addFamilia(dniTitular,dniFamilia,opc)
+                                if respuesta != None:
+                                    print(respuesta)
+                                else:
+                                    print("-------------------------------------------")
+                                    print ("Familiar añadido correctamente")
+                                    input("Press Enter to continue...")
+                                
+                                print("\n-------------------------------------------")
+                                print("¿Desea añadir mas familiares?")
                                 print("1. Si.")
                                 print("2. No.")
                                 opc2=int(input("Deme una opción: "))
-                            if(opc2 == 2):
-                                sigue=False
+                                while(opc<1 and opc>2):
+                                    print("Opcion no valida")
+                                    print("1. Si.")
+                                    print("2. No.")
+                                    opc2=int(input("Deme una opción: "))
+                                if(opc2 == 2):
+                                    sigue=False
+                            else:
+                                print("Ya es hijo no puede ser asignado a otra persona")
+                                break
                         else:
-                            print("Ya es hijo no puede ser asignado a otra persona")
+                            print ("No se puede añadir a si mismo como familiar")
                             break
                     else:
                         print ("El dni del familiar no existe")

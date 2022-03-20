@@ -112,10 +112,11 @@ class Club:
                 if i.getFamilia().getPareja().getUsuario().getDni() == dni:
                     return i
     
-    def getCuotaDni(self, dni):
+    def getCuotaDni(self, dni, annio):
         for i in self.getListaCuotas():
             if i.getSocio().getUsuario().getDni() == dni:
-                return i
+                if int(i.getAnnio()) == int(annio):
+                    return i
     
     def comprobarCuotaAnnio(self, dni, annio):
         for i in self.getListaCuotas():
@@ -160,7 +161,7 @@ class Club:
                 descuento = cantidadPagar * (self.DESCUENTOPAREJAHIJOS / 100)
                 cantidadPagar = cantidadPagar - descuento
         else:
-            cuotaPadre = self.getCuotaDni(comprobarSiEsHijo.getUsuario().getDni())
+            cuotaPadre = self.getCuotaDni(comprobarSiEsHijo.getUsuario().getDni(),year)
             cantidadPagar = cuotaPadre.getCantidadPagar()
         return cantidadPagar
     

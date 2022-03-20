@@ -63,14 +63,14 @@ class VistaSocio:
         respuesta = self._controlador.mostrarFamilia()
         print("--------------------------------------------------------------------")
         if respuesta.getFamilia().getPareja() != None:
-            print("Pareja: {:<10}  ,  {:<10} \n".format(respuesta.getUsuario().getDni(),self._controlador.socioPorDni(respuesta.getFamilia().getPareja().getUsuario().getDni()).getNombreCompleto()))
+            print("Pareja: DNI: {:<12} Nombre: {:<20} \n".format(respuesta.getFamilia().getPareja().getUsuario().getDni(),self._controlador.socioPorDni(respuesta.getFamilia().getPareja().getUsuario().getDni()).getNombreCompleto()))
         else:
             print("No tiene pareja")
         
         if len(respuesta.getFamilia().getHijos()) > 0:
             print("Hijos:")
             for i in respuesta.getFamilia().getHijos():
-                print("Hijo: {:<10}  ,  {:<10} \n".format(i.getUsuario().getDni(),self._controlador.socioPorDni(i.getUsuario().getDni()).getNombreCompleto()))
+                print("DNI: {:<12} Nombre: {:<20} \n".format(i.getUsuario().getDni(),self._controlador.socioPorDni(i.getUsuario().getDni()).getNombreCompleto()))
         else:
             print("No tiene hijos")
     

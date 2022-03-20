@@ -37,10 +37,11 @@ if __name__ == "__main__":
                             print("El parametro 3 es incorrecto")
                             exit()
                 else:
-                    print("El parametro 2 es incorrecto")
+                    print("El parametro 1 es incorrecto")
                     exit()
         else:
             print ("Parametro -A mal introducido")
+            exit()
     elif len(sys.argv) == 5:
         for c in club.getListaSocios():
             if sys.argv[1] == "-u":
@@ -55,10 +56,11 @@ if __name__ == "__main__":
                         print("El parametro 3 es incorrecto")
                         exit()
             else:
-                print("El parametro 2 es incorrecto")
+                print("El parametro 1 es incorrecto")
                 exit()
     else:
         print ("El numero de parametros introducido es incorrecto")
+        exit()
 
 
     print("El usuario no existe")

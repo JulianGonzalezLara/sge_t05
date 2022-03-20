@@ -17,7 +17,7 @@ class ControladorSocios:
     def controlOpciones(self,opc):
         if (opc == 0): 
             now = datetime.datetime.now()
-            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)))
+            self._usuarioConectado.getUsuario().setUltimoAcceso(("{}-{}-{} {}:{}:{}".format(now.day, now.month, now.year, now.hour, now.minute, now.second)))
             self.crearJson()
             self._vistaSocio.salir()
         elif (opc == 1):
